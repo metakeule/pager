@@ -15,6 +15,8 @@ func Example() {
 
 	from, to, selected := pg.Indexes()
 
+	fmt.Println("")
+
 	if from > -1 {
 		for i, line := range data[from:to] {
 			prefix := "  "
@@ -25,7 +27,8 @@ func Example() {
 		}
 	}
 
-	// Output:   three
+	// Output:
+	//   three
 	//   four
 	// > five
 }
