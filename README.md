@@ -8,6 +8,11 @@ pager
 This package does not depend on external packages.
 All versions of Go are supported.
 
+Status
+------
+
+Stable
+
 Usage
 -----
 
