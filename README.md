@@ -10,6 +10,7 @@ pager
 
 `pager` provides a simple data neutral paging solution for Go.
 This package does not depend on external packages.
+All versions of Go are supported.
 
 
 Usage
