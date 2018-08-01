@@ -8,7 +8,8 @@ pager
 
 100% test coverage (that was easy :-))
 
-`pager` provides a simple data neutral paging solution for Go
+`pager` provides a simple data neutral paging solution for Go.
+This package does not depend on external packages.
 
 
 Usage
