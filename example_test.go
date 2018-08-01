@@ -6,6 +6,8 @@ import (
 )
 
 func Example() {
+	fmt.Println("")
+
 	var data = []string{"one", "two", "three", "four", "five", "six"}
 
 	pg := pager.New(3, len(data))
@@ -14,8 +16,6 @@ func Example() {
 	pg.Prev()
 
 	from, to, selected := pg.Indexes()
-
-	fmt.Println("")
 
 	if from > -1 {
 		for i, line := range data[from:to] {
