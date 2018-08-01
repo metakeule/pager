@@ -8,8 +8,6 @@ pager
 
 [![Coverage Status](https://coveralls.io/repos/github/metakeule/pager/badge.svg?branch=master)](https://coveralls.io/github/metakeule/pager?branch=master)
 
-100% test coverage (that was easy :-))
-
 `pager` provides a simple data neutral paging solution for Go.
 This package does not depend on external packages.
 All versions of Go are supported.
