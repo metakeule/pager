@@ -4,6 +4,8 @@ pager
 
 [![Build Status](https://secure.travis-ci.org/metakeule/pager.png)](http://travis-ci.org/metakeule/pager)
 
+[![Go Report](https://goreportcard.com/badge/github.com/metakeule/pager)](https://goreportcard.com/report/github.com/metakeule/pager)
+
 100% test coverage (that was easy :-))
 
 `pager` provides a simple data neutral paging solution for Go
