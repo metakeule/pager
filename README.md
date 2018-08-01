@@ -6,6 +6,8 @@ pager
 
 [![Go Report](https://goreportcard.com/badge/github.com/metakeule/pager)](https://goreportcard.com/report/github.com/metakeule/pager)
 
+[![Coverage Status](https://coveralls.io/repos/github/metakeule/pager/badge.svg?branch=master)](https://coveralls.io/github/metakeule/pager?branch=master)
+
 100% test coverage (that was easy :-))
 
 `pager` provides a simple data neutral paging solution for Go.
