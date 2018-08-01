@@ -3,10 +3,24 @@ package pager
 // Pager allows paging without having to deal
 // with the data that is to be paged.
 type Pager interface {
+
+	// Next selects the next item. Returns wether the selected item has changed.
 	Next() (changed bool)
+
+	// Prev selects the previous item. Returns wether the selected item has changed.
 	Prev() (changed bool)
+
+	// PageDown selects the next page. Returns wether the selected item has changed.
 	PageDown() (changed bool)
+
+	// PageUp selects the previous page. Returns wether the selected item has changed.
 	PageUp() (changed bool)
+
+	// Indexes returns the from, to and selected index.
+	// Selected index is counted from start to end, so
+	// to get the index of the underlying data, add from to selected.
+	// If selected is -1, there is no selection.
+	// If from is -1, there is no data.
 	Indexes() (from, to, selected int)
 }
 
