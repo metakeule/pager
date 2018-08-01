@@ -1,6 +1,7 @@
 package pager
 
 import (
+	// "os"
 	"reflect"
 	"testing"
 )
@@ -27,6 +28,69 @@ func displayData(pg Pager) (lines []string, selectedLine string) {
 	return
 }
 
+func BenchmarkNext(b *testing.B) {
+	b.StopTimer()
+
+	pg := New(40, 50000)
+
+	b.StartTimer()
+	b.ReportAllocs()
+	for i := 0; i < b.N; i++ {
+		pg.Next()
+	}
+}
+
+func BenchmarkPrev(b *testing.B) {
+	b.StopTimer()
+
+	pg := New(40, 50000)
+
+	b.StartTimer()
+	b.ReportAllocs()
+	for i := 0; i < b.N; i++ {
+		pg.Prev()
+	}
+}
+
+func BenchmarkPageDown(b *testing.B) {
+	b.StopTimer()
+
+	pg := New(40, 50000)
+
+	b.StartTimer()
+	b.ReportAllocs()
+	for i := 0; i < b.N; i++ {
+		pg.PageDown()
+	}
+}
+
+func BenchmarkPageUp(b *testing.B) {
+	b.StopTimer()
+
+	pg := New(40, 50000)
+
+	b.StartTimer()
+	b.ReportAllocs()
+	for i := 0; i < b.N; i++ {
+		pg.PageUp()
+	}
+}
+
+func BenchmarkIndexes(b *testing.B) {
+	b.StopTimer()
+
+	pg := New(40, 50000)
+	for i := 0; i < 40000; i++ {
+		pg.PageUp()
+	}
+
+	b.StartTimer()
+	b.ReportAllocs()
+	for i := 0; i < b.N; i++ {
+		pg.Indexes()
+	}
+}
+
 func TestNext(t *testing.T) {
 	tests := []struct {
 		times        int
@@ -48,6 +112,16 @@ func TestNext(t *testing.T) {
 		{11, []string{"eight", "nine", "ten"}, "ten", false},
 	}
 
+	/*
+		f, err := os.Create("cpuprofile")
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		pprof.StartCPUProfile(f)
+		defer pprof.StopCPUProfile()
+		defer f.Close()
+	*/
 	for _, test := range tests {
 		pager := newPager(3)
 

@@ -1,2 +1,5 @@
 cover.out
 cover.html
+cpu.prof
+mem.prof
+bench.test

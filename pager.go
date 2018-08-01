@@ -10,6 +10,7 @@ type Pager interface {
 
 type pager struct {
 	dataLen, selected, height int
+	dataLen_div_height        int
 }
 
 // New create a new pager.
@@ -19,6 +20,7 @@ func New(height, dataLen int) Pager {
 	if dataLen == 0 {
 		p.selected = -1
 	}
+	p.dataLen_div_height = dataLen / height
 	return p
 }
 
@@ -47,7 +49,7 @@ func (p *pager) PageDown() (changed bool) {
 	}
 
 	page := p.currentPage()
-	if page >= p.dataLen/p.height {
+	if page >= p.dataLen_div_height {
 		return
 	}
 
