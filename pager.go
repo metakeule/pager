@@ -1,5 +1,7 @@
 package pager
 
+// Pager allows paging without having to deal
+// with the data that is to be paged.
 type Pager interface {
 	Next() (changed bool)
 	Prev() (changed bool)
@@ -10,7 +12,7 @@ type Pager interface {
 
 type pager struct {
 	dataLen, selected, height int
-	dataLen_div_height        int
+	dataLenDivHeight          int
 }
 
 // New create a new pager.
@@ -20,7 +22,7 @@ func New(height, dataLen int) Pager {
 	if dataLen == 0 {
 		p.selected = -1
 	}
-	p.dataLen_div_height = dataLen / height
+	p.dataLenDivHeight = dataLen / height
 	return p
 }
 
@@ -49,7 +51,7 @@ func (p *pager) PageDown() (changed bool) {
 	}
 
 	page := p.currentPage()
-	if page >= p.dataLen_div_height {
+	if page >= p.dataLenDivHeight {
 		return
 	}
 
