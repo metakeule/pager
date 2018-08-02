@@ -31,7 +31,7 @@ type pager struct {
 }
 
 // New create a new pager.
-// Create a new pager each time the height or dataLen changes.
+// Each time the height or dataLen changes, a new pager should be created.
 func New(height, dataLen int, opts ...Option) Pager {
 	p := &pager{height: height, dataLen: dataLen}
 	p.dataLenDivHeight = dataLen / height
