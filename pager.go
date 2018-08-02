@@ -34,7 +34,7 @@ func PreSelect(index uint) Option {
 	}
 }
 
-// FixPage sets the fix page display style (default)
+// FixPage always keeps the same pages (default)
 func FixPage() Option {
 	return func(pg *pager) {
 

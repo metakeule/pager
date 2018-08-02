@@ -59,6 +59,11 @@ func main() {
 }
 ```
 
+There are three display variants available:
+- FixPage (default)
+- Top
+- Bottom
+
 Documentation
 -------------
 
