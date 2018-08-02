@@ -65,3 +65,17 @@ Documentation
 -------------
 
 see http://godoc.org/github.com/metakeule/pager
+
+Benchmarks
+----------
+
+```
+BenchmarkFixPage-4   26.7  ns/op   0 B/op     0 allocs/op
+BenchmarkTop-4        9.08 ns/op   0 B/op     0 allocs/op
+BenchmarkBottom-4     8.17 ns/op   0 B/op     0 allocs/op
+
+BenchmarkNext-4       4.04 ns/op   0 B/op     0 allocs/op
+BenchmarkPrev-4       4.54 ns/op   0 B/op     0 allocs/op
+BenchmarkPageDown-4   20.6 ns/op   0 B/op     0 allocs/op
+BenchmarkPageUp-4     21.3 ns/op   0 B/op     0 allocs/op
+```
