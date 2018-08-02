@@ -10,7 +10,9 @@ func Example() {
 
 	var data = []string{"one", "two", "three", "four", "five", "six"}
 
-	pg := pager.New(3, len(data))
+	height := 3
+	selected := 0
+	pg := pager.New(height, len(data), selected)
 
 	pg.PageDown()
 	pg.Prev()

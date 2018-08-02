@@ -43,8 +43,9 @@ func print(pg pager.Pager) {
 }
 
 func main() {
-	
-	pg := pager.New(3, len(data))
+	height := 3
+	selected := 0
+	pg := pager.New(height, len(data), selected)
 
     // do the paging stuff here
     // when height or data changes, create a new pager

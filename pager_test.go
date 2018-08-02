@@ -7,7 +7,7 @@ import (
 )
 
 func newPager(height int) *pager {
-	p := New(height, len(data))
+	p := New(height, len(data), 0)
 	return p.(*pager)
 }
 
@@ -31,7 +31,7 @@ func displayData(pg Pager) (lines []string, selectedLine string) {
 func BenchmarkNext(b *testing.B) {
 	b.StopTimer()
 
-	pg := New(40, 50000)
+	pg := New(40, 50000, 0)
 
 	b.StartTimer()
 	b.ReportAllocs()
@@ -43,7 +43,7 @@ func BenchmarkNext(b *testing.B) {
 func BenchmarkPrev(b *testing.B) {
 	b.StopTimer()
 
-	pg := New(40, 50000)
+	pg := New(40, 50000, 0)
 
 	b.StartTimer()
 	b.ReportAllocs()
@@ -55,7 +55,7 @@ func BenchmarkPrev(b *testing.B) {
 func BenchmarkPageDown(b *testing.B) {
 	b.StopTimer()
 
-	pg := New(40, 50000)
+	pg := New(40, 50000, 0)
 
 	b.StartTimer()
 	b.ReportAllocs()
@@ -67,7 +67,7 @@ func BenchmarkPageDown(b *testing.B) {
 func BenchmarkPageUp(b *testing.B) {
 	b.StopTimer()
 
-	pg := New(40, 50000)
+	pg := New(40, 50000, 0)
 
 	b.StartTimer()
 	b.ReportAllocs()
@@ -79,7 +79,7 @@ func BenchmarkPageUp(b *testing.B) {
 func BenchmarkIndexes(b *testing.B) {
 	b.StopTimer()
 
-	pg := New(40, 50000)
+	pg := New(40, 50000, 0)
 	for i := 0; i < 40000; i++ {
 		pg.PageUp()
 	}
@@ -320,7 +320,7 @@ func TestPageUp(t *testing.T) {
 }
 
 func TestEmpty(t *testing.T) {
-	pg := New(3, 0)
+	pg := New(3, 0, 0)
 
 	from, to, selected := pg.Indexes()
 

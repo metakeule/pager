@@ -31,8 +31,10 @@ type pager struct {
 
 // New create a new pager.
 // Create a new pager each time the height or dataLen changes.
-func New(height, dataLen int) Pager {
+// Selected is the index in the data slice
+func New(height, dataLen, selected int) Pager {
 	p := &pager{height: height, dataLen: dataLen}
+	p.selected = selected
 	if dataLen == 0 {
 		p.selected = -1
 	}
