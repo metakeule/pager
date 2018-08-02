@@ -30,7 +30,7 @@ type pager struct {
 	style                     func(*pager) (from, to, selected int)
 }
 
-// New create a new pager.
+// New creates a new pager.
 // Each time the height or dataLen changes, a new pager should be created.
 func New(height, dataLen int, opts ...Option) Pager {
 	p := &pager{height: height, dataLen: dataLen}
