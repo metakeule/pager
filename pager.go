@@ -17,10 +17,11 @@ type Pager interface {
 	PageUp() (changed bool)
 
 	// Indexes returns the from, to and selected index.
-	// Selected index is counted from start to end, so
-	// to get the index of the underlying data, add from to selected.
+	// To get the current data, use data[from:to].
+	// The seleceted index is the position within data[from:to],
+	// so the position within data would be from+selected.
 	// If selected is -1, there is no selection.
-	// If from is -1, there is no data.
+	// If from is -1, there is no data to be shown.
 	Indexes() (from, to, selected int)
 }
 
