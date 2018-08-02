@@ -40,14 +40,12 @@ func FixPage() Option {
 
 		pg.style = func(p *pager) (from, to, selected int) {
 
-			if p.dataLen == 0 || p.selected > p.dataLen-1 {
-				return -1, -1, -1
-			}
-
 			page := p.currentPage()
+
 			if page > 0 {
 				from = page * p.height
 			}
+
 			to = from + p.height
 			if p.dataLen < to {
 				to = p.dataLen
@@ -64,9 +62,6 @@ func Top() Option {
 
 		pg.style = func(p *pager) (from, to, selected int) {
 
-			if p.dataLen == 0 || p.selected > p.dataLen-1 {
-				return -1, -1, -1
-			}
 			from = p.selected
 			to = p.selected + p.height
 
@@ -85,9 +80,6 @@ func Bottom() Option {
 
 		pg.style = func(p *pager) (from, to, selected int) {
 
-			if p.dataLen == 0 || p.selected > p.dataLen-1 {
-				return -1, -1, -1
-			}
 			if p.selected < p.height {
 				to = p.dataLen
 				if to > p.height {
@@ -186,6 +178,10 @@ func (p *pager) PageUp() (changed bool) {
 // If selected is -1, there is no selection.
 // If from is -1, there is no data.
 func (p *pager) Indexes() (from, to, selected int) {
+	if p.dataLen == 0 || p.selected > p.dataLen-1 {
+		return -1, -1, -1
+	}
+
 	return p.style(p)
 }
 
