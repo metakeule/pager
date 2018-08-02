@@ -30,7 +30,7 @@ var data = []string{"one", "two", "three", "four", "five", "six"}
 func print(pg pager.Pager) {
 	from, to, selected := pg.Indexes()
 
-    // we got data
+	// we got data
 	if from > -1 {  
 		for i, line := range data[from:to] {
 			prefix := "  "
@@ -45,11 +45,11 @@ func print(pg pager.Pager) {
 func main() {
 	pg := pager.New(3, len(data), pager.PreSelect(5))
 
-    // do the paging stuff here
-    // when height or data changes, create a new pager
+	// do the paging stuff here
+	// when height or data changes, create a new pager
 	pg.Prev()
 
-    // print the paged data
+	// print the paged data
 	print(pg)
 
 	// Output:
