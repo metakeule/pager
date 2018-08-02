@@ -1,6 +1,6 @@
 package pager
 
-// type Style func(*pager) (from, to, selected int)
+// Option is an option for the page initialization
 type Option func(*pager)
 
 // Pager allows paging without having to deal
