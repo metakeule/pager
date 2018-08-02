@@ -8,12 +8,10 @@ import (
 func Example() {
 	fmt.Println("")
 
-	var data = []string{"one", "two", "three", "four", "five", "six", "seven"}
+	var data = []string{"one", "two", "three", "four", "five", "six"}
 
-	pg := pager.New(3, len(data), pager.PreSelect(3), pager.Top())
+	pg := pager.New(3, len(data), pager.PreSelect(5))
 
-	pg.PageDown()
-	pg.Prev()
 	pg.Prev()
 
 	from, to, selected := pg.Indexes()
@@ -29,7 +27,7 @@ func Example() {
 	}
 
 	// Output:
+	//   four
 	// > five
 	//   six
-	//   seven
 }
