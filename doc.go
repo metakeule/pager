@@ -3,12 +3,12 @@
 // license that can be found in the LICENSE file.
 
 /*
-  Package pager provides a simple data neutral paging solution.
+Package pager provides a simple data neutral paging solution.
 
-  You are expected to deal with your data slice on your own,
-  just passing its length and receiving its indexes.
+You are expected to deal with your data slice on your own,
+just passing its length and receiving its indexes.
 
-  See the example.
+See the example.
 
 */
 package pager
